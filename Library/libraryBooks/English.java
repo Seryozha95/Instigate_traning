@@ -1,12 +1,21 @@
 package libraryBooks;
 import  books.*;
 public class English extends Books {
-    public int getbook() {
+    public void  getbook() {
         quantity = quantity+1;
-        return quantity;
     }
     public int setbook() {
         quantity = quantity-1;
         return quantity;
     }
+     public void openUrl(String url) {
+                  Runtime runtime = Runtime.getRuntime();
+                         try {
+                                         runtime.exec("xdg-open " + url);
+                                                 }
+                                 catch (IOException e) {
+                                                 e.printStackTrace();
+                                                         }
+                                     }
+
 }
