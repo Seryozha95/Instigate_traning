@@ -4,29 +4,28 @@ import java.io.IOException;
 import java.net.URI;
 
 public class Books {
-    public String name; 
+    public String author;
     public String title;
     public String url;
     public int yearOfManufacture;
     public int numberOfPages;
     public int quantity;
     
-    public Books(String n, String t, String u, int yom, int nop, int q) {
-                name=n;
+    public Books(String a, String t, String u, int yom, int nop, int q) {
+                author=a;
                 title=t;
                 url=u;
                 yearOfManufacture=yom;
                 numberOfPages=nop;
                 quantity=q;
     }
-    public int getbook() {
+/*    public int getbook() {
         quantity=quantity+1;
-        System.out.println(quantity); 
         return quantity;
     }
     public int setbook() {
         return quantity;
-    }
+    }*/
     public void openUrl(String url) {
         Runtime runtime = Runtime.getRuntime();
         try {
