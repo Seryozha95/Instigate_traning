@@ -47,10 +47,10 @@ public class Main {
            Books a=vinniPux;
            firstWorker.setBook(a);
           }
-          if (selectedNumber == 5) {
+          if (selectedNumber == 0) {
               break;
           }
-          System.out.println("Do you wand another book?" + "\n" + "Press 5 for exit... ");
+          System.out.println("Do you wand another book?" + "\n" + "Press 0 for exit... ");
           firstWorker.sizeOfSalary(firstWorker.experince);
 
        }
