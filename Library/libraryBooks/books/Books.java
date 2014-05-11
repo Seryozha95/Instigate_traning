@@ -19,13 +19,6 @@ public class Books {
                 numberOfPages=nop;
                 quantity=q;
     }
-/*    public int getbook() {
-        quantity=quantity+1;
-        return quantity;
-    }
-    public int setbook() {
-        return quantity;
-    }*/
     public void openUrl(String url) {
         Runtime runtime = Runtime.getRuntime();
         try {
