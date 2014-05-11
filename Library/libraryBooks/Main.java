@@ -50,7 +50,12 @@ public class Main {
           if (selectedNumber == 0) {
               break;
           }
-          System.out.println("Do you wand another book?" + "\n" + "Press 0 for exit... ");
+       //   if (selectedNumber == 5) {
+//             firstWorker.getBook(a);
+         // }
+
+
+          System.out.println("If you want return the book press 5 " + "\n" + "Do you want another book?" + "\n" + "Press 0 for exit... ");
           firstWorker.sizeOfSalary(firstWorker.experince);
 
        }
