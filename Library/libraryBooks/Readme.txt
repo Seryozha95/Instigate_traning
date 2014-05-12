@@ -17,7 +17,7 @@
 
    If the library doesn't have the book you want you can send a message to this email "serojkhachatryan95@gmail.com"
    You can find our library from this address "https://github.com/Seryozha95/Instigate_traning.git"
-   You can be aware of the refreshments of library  by inserting "git clon https://github.com/Seryozha95/Instigate_traning/Library.git" in your terminal
+   You can be aware of the refreshments of library  by inserting "git clon https://github.com/Seryozha95/Instigate_traning.git" in your terminal
 
 
                                     Enjoy your reading...
