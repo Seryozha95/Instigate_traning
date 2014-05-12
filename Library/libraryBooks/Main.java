@@ -40,7 +40,7 @@ public class Main {
            if (selectedNumber == 1) {
                b.a = levTolstoy; 
                firstWorker.setBook(b.a);
-               card.add("Алан Александр Милн-Винни-Пух --");
+               card.add("Лев Толстой-Война и мир --");
            }
            if (selectedNumber ==2) {
               b.a=feodorDostoevskiy;

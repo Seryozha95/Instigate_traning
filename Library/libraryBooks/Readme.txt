@@ -11,7 +11,7 @@
 
     The rules of using the library:
         
-        Insert  "java Main" in your terminal
+        Insert  "make" in your terminal
         Insert your database
         After it the workers of library will make a contact with you 
 
