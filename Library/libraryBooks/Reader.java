@@ -1,6 +1,7 @@
 import person.*;
+import books.*;
+import java.util.ArrayList;
 public class Reader extends Person {
-    public String card;
     public int numberOfCard;
     public Reader(String n, String sn, String psn, int noc) {
         name=n;
@@ -8,6 +9,6 @@ public class Reader extends Person {
         passportSerialNumber=psn;
         numberOfCard=noc;
     }
-}
+    }
         
 

@@ -1,11 +1,15 @@
 import books.*;
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Iterator;
 public class Main {
     public Books a;
     public int nooc=6;
     public static void main(String[] args) throws java.io.IOException {
         Scanner scan = new Scanner(System.in);
+        ArrayList card = new ArrayList();
+        Iterator itr = card.iterator();
         //My worker
         Workers firstWorker=new Workers("Aren", "Mailyan", "attendant", "AM00487514", 6); 
         
@@ -37,25 +41,32 @@ public class Main {
            if (selectedNumber == 1) {
                Books a=levTolstoy; 
                firstWorker.setBook(a);
+               card.add("Лев Толстой-Война и мир --" );
            }
            if (selectedNumber ==2) {
                Books a=feodorDostoevskiy;
               firstWorker.setBook(a);
+              card.add("Федор Достоевский-Идиот --" );
            }
 
            if (selectedNumber == 3) { 
            Books a=vinniPux;
            firstWorker.setBook(a);
+           card.add("Алан Александр Милн-Винни-Пух --" );
           }
           if (selectedNumber == 0) {
               break;
           }
-       //   if (selectedNumber == 5) {
-//             firstWorker.getBook(a);
-         // }
+//          if (selectedNumber == 5) {
+  //           firstWorker.getBook(a);
+    //      }
+        if (selectedNumber == 6) {
+           for(int i=0;i<card.size();i++) 
+           System.out.println(card.get(i));
+        }
 
 
-          System.out.println("If you want return the book press 5 " + "\n" + "Do you want another book?" + "\n" + "Press 0 for exit... ");
+          System.out.println("\n" + "If you want return the book press 5 " + "\n" + "Do you want another book?" + "\n" + "If you want to see your actions press 6" + "\n" + "Press 0 for exit... " + "\n");
           firstWorker.sizeOfSalary(firstWorker.experince);
 
        }

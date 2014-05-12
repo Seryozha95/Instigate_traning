@@ -7,8 +7,8 @@ public class Books {
     public String author;
     public String title;
     public String url;
-    public int yearOfManufacture;
-    public int numberOfPages;
+    private int yearOfManufacture;
+    private int numberOfPages;
     public int quantity;
     
     public Books(String a, String t, String u, int yom, int nop, int q) {
