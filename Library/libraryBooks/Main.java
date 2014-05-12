@@ -2,14 +2,12 @@ import books.*;
 import java.io.IOException;
 import java.util.Scanner;
 import java.util.ArrayList;
-import java.util.Iterator;
 public class Main {
     public Books a;
     public int nooc=6;
     public static void main(String[] args) throws java.io.IOException {
         Scanner scan = new Scanner(System.in);
         ArrayList card = new ArrayList();
-        Iterator itr = card.iterator();
         //My worker
         Workers firstWorker=new Workers("Aren", "Mailyan", "attendant", "AM00487514", 6); 
         
@@ -41,7 +39,7 @@ public class Main {
            if (selectedNumber == 1) {
                Books a=levTolstoy; 
                firstWorker.setBook(a);
-               card.add("Лев Толстой-Война и мир --" );
+               card.add("Алан Александр Милн-Винни-Пух --");
            }
            if (selectedNumber ==2) {
                Books a=feodorDostoevskiy;
