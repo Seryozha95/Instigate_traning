@@ -3,10 +3,11 @@ import java.io.IOException;
 import java.util.Scanner;
 import java.util.ArrayList;
 public class Main {
-    public Books a;
+    public Books a = new Books();
     public int nooc=6;
     public static void main(String[] args) throws java.io.IOException {
         Scanner scan = new Scanner(System.in);
+        Main b = new Main();
         ArrayList card = new ArrayList();
         //My worker
         Workers firstWorker=new Workers("Aren", "Mailyan", "attendant", "AM00487514", 6); 
@@ -37,28 +38,28 @@ public class Main {
        while (true) {
            int selectedNumber = scan.nextInt();
            if (selectedNumber == 1) {
-               Books a=levTolstoy; 
-               firstWorker.setBook(a);
+               b.a = levTolstoy; 
+               firstWorker.setBook(b.a);
                card.add("Алан Александр Милн-Винни-Пух --");
            }
            if (selectedNumber ==2) {
-               Books a=feodorDostoevskiy;
-              firstWorker.setBook(a);
+              b.a=feodorDostoevskiy;
+              firstWorker.setBook(b.a);
               card.add("Федор Достоевский-Идиот --" );
            }
 
            if (selectedNumber == 3) { 
-           Books a=vinniPux;
-           firstWorker.setBook(a);
+           b.a=vinniPux;
+           firstWorker.setBook(b.a);
            card.add("Алан Александр Милн-Винни-Пух --" );
           }
           if (selectedNumber == 0) {
               break;
           }
-//          if (selectedNumber == 5) {
-  //           firstWorker.getBook(a);
-    //      }
-        if (selectedNumber == 6) {
+          if (selectedNumber == 5) {
+             firstWorker.getBook(b.a);
+          }
+          if (selectedNumber == 6) {
            for(int i=0;i<card.size();i++) 
            System.out.println(card.get(i));
         }

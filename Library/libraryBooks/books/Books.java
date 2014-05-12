@@ -19,6 +19,9 @@ public class Books {
                 numberOfPages=nop;
                 quantity=q;
     }
+    public Books(){
+         
+    }
     public void openUrl(String url) {
         Runtime runtime = Runtime.getRuntime();
         try {
