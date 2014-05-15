@@ -1,9 +1,9 @@
 Heloo.
 
-     The demmand of the tasj is to find the number that has more than 500
+     The demmand of the task is to find the number that has more than 500
      divisers.
 
-     I solved the tash a little bit diffrently. Insed of 500 you can insert any
+     I solved the task a little bit diffrently. Insed of 500 you can insert any
      number you want.
 
 The way of working:
