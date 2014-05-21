@@ -1,0 +1,32 @@
+body{
+    background-color:#969993;
+}
+h1 {
+   float:left;
+}
+
+a button {
+    margin-left: 500px;
+    margin-bottom:150px;
+ }
+#namsurname h2  {
+    overflow: auto;
+    padding-left: 150px;
+    color:#541;
+    
+
+}
+#biography {
+   height:500px;
+   width:600px;
+   overflow: auto;
+   padding-left: 150px;
+   color:#eee;
+}
+
+ol, p{
+   font-size:12px;
+}
+h2{
+    color:#666
+}
