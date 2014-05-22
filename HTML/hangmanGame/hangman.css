@@ -1,7 +1,19 @@
 body{
-   /* background:url(hangman.jpg);
+    //background:url(hangman.jpig);
 }
 h1 {
-    float:left;
-    color:#fff;
+    color:#000;
+}
+table {
+   margin:200px auto;
+  // width:300px;
+   
+}
+td{
+height:50px;
+  width:30px;
+
+}
+#main{
+   display:none;
 }
