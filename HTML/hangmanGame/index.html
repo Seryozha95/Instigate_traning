@@ -1,21 +1,22 @@
-<!DOCTYPE html>
 <html>
     <head>
-        <script src="hangman.js"></script>
         <link rel="stylesheet" href="hangman.css">
-        <title>list</title>
+        <title>Hangman Game</title>
     </head>
     <body>
+	<div id="">
        <h1>Hangman Game</h1>
-       <input  type="submit" onclick="playquation()" value="Play" />
-       <img src="hangman.png" width=150 height=150 />
-       <div id="main">
-       <p id="printQuestion"></p>
-        Insert letter <input id="input" type="text" name="name">
-        <input  type="submit" onclick="checkLetter()" value="ADD"/>
-        <table border="1" ><tr id="collom"></tr></table>
-        
-     </div>
-     </body>
+       <input type="submit" id="play" value="Play" />
+       <img id=hangmanpicture src="hangman.png" />
+	   	<div id="main">
+		    <img  src="hangmanTable.png" />
+			<p id="printQuestion"></p>
+			Insert letter <input id="input" type="text" name="name">
+			<input  type="submit" onclick="checkLetter()" value="ADD"/>
+			<table border="1" ><tr id="collom"></tr></table>
+        </div>
+    </body>
+	 
+        <script src="hangman.js"></script>
+	 
   </html>
-    

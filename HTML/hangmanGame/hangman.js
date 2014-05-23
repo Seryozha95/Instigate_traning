@@ -1,16 +1,18 @@
 var Question={
-    "ques" : [ "What is my name",
-    "What is your name"
-        ],
-    "answer" : [ "Seryozha",
-    "Naira"
-        ],
-
+    "ques" : [ "What is my name","What is your name"],
+    "answer" : [ "Seryozha","Naira"],
 };
+var inputLetter = document.getElementById("input");
 var randomNumber = Math.floor((Math.random() * Question.ques.length));
-function playquation(){
+currentWord = Question.answer[randomNumber];
+var l = currentWord.length;
+
+
+function play(){
+	
+	this.style.display = "none";
     var tr=document.getElementById("collom");
-    for (var i = 0; i < Question.answer[randomNumber].length; i++) {
+    for (var i = 0; i < l; i++) {
         var td= document.createElement("td");
         td.setAttribute("id", "element" + i);
         tr.appendChild(td);
@@ -20,32 +22,37 @@ function playquation(){
     document.getElementById("printQuestion").innerHTML=Question.ques[randomNumber];
 }
 var correctGuesses="0";
-var gameOver="0";
+var badGuessCount="0";
 function checkLetter() {
     var newLetter=document.getElementById("input").value;
     if (document.getElementById("input").value !="") {
-        document.getElementById("input").value="";
         var badGuesses="0";
-        
-        for (var i = 0; i < Question.answer[randomNumber].length; i++) {
-            if (Question.answer[randomNumber].charAt(i) == newLetter) {
+        inputLetter.value = "";
+        for (var i = 0; i < l; i++) {
+            if (currentWord[i].toLowerCase() == newLetter.toLowerCase()) {
                 correctGuesses++;
-                alert(correctGuesses);
-                if (correctGuesses == Question.answer[randomNumber].length)
+				
+				
+				var letter = document.createElement("span");
+				letter.innerHTML = currentWord[i];
+				document.getElementById("element"+i).appendChild(letter);
+				
+				currentWord = currentWord.replace(currentWord[i],"0");
+				
+                if (correctGuesses == l)
                 { 
-                    alert("verj");
-                    return;
+                    gameOver();
+                    alert("WIN!!!");
                 }
             }
             else {
                 badGuesses++;
-               // alert(badGuesses);
-                if (badGuesses == Question.answer[randomNumber].length)
+                if (badGuesses == l)
                 {
-                    gameOver++;
-                    alert(gameOver);
-                    if (gameOver == 5) {
-                        alert();
+                    badGuessCount++;
+                    if (badGuessCount == 5) {
+						gameOver();
+                        alert("Game Over");
                     }
 
                 }
@@ -53,5 +60,31 @@ function checkLetter() {
             }
         }
     }
+	
 }
+
+inputLetter.onclick = function() {
+	this.value="";
+}
+
+document.getElementById("play").onclick = play;
+
+
+function gameOver(){
+	inputLetter.setAttribute("disabled","");
+	
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
 

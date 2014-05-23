@@ -1,7 +1,9 @@
 body{
-    //background:url(hangman.png);
-    //background-size:800px 600px;
-    background-color:#CCC
+     background-color:#CCC
+}
+#hangmanpicture {
+	width:200px;
+	height:350px;
 }
 
 h1 {
@@ -9,8 +11,7 @@ h1 {
 }
 table {
    margin:200px auto;
-  // width:300px;
-   
+     
 }
 td{
 height:50px;
@@ -20,3 +21,9 @@ height:50px;
 #main{
    display:none;
 }
+#main img {
+    float:right;
+    margin-top:-400px;
+    width:200px;
+	height:350px;
+	}
