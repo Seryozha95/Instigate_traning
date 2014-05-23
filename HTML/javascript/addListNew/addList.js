@@ -4,7 +4,6 @@ var ol;
 var li;
 function function1() {
 
-   var myNumber=5;
    ol= document.getElementById("list");
    li = document.createElement("li");
 
