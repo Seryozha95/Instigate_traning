@@ -1,6 +1,9 @@
 body{
-    //background:url(hangman.jpig);
+    //background:url(hangman.png);
+    //background-size:800px 600px;
+    background-color:#CCC
 }
+
 h1 {
     color:#000;
 }
