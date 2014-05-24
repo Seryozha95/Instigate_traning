@@ -18,6 +18,24 @@ var question = [
 }
 
 ];
+
+var images = [
+{ "pictureId":"glux"
+},
+{
+  "pictureId":"ajDzerq"
+},
+{
+  "pictureId":"por"
+},
+{
+  "pictureId":"votqer"
+},
+{
+  "pictureId":"table"
+}
+
+];
 var inputLetter = document.getElementById("input");
 var randomNumber = Math.floor((Math.random() * question.length));
 currentWord = question[randomNumber].questionAnswer;
@@ -65,7 +83,9 @@ function checkLetter() {
             badGuesses++;
             if (badGuesses == l)
             {
+			   document.getElementById(images[badGuessCount].pictureId).style.display="block";
                badGuessCount++;
+			                
                if (badGuessCount == 5) {
                   gameOver();
                   alert("Game Over");

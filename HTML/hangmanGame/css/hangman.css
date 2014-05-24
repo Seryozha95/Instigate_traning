@@ -2,7 +2,8 @@ body{
      background-color:#CCC
 }
 #hangmanpicture {
-	width:200px;
+	
+    width:200px;
 	height:350px;
 }
 
@@ -14,16 +15,34 @@ table {
      
 }
 td{
-height:50px;
-  width:30px;
-
+   height:50px;
+   width:30px;
+   font-size:40px;
+   font-family:arial;
 }
 #main{
    display:none;
 }
 #main img {
-    float:right;
-    margin-top:-400px;
-    width:200px;
-	height:350px;
+   position:absolute; 
+   top:10px;
+   right:15px;
+   width:180px;
+
+   height:310px;
 	}
+
+#main #table  {
+   position:absolute;
+   top:15px;
+   right:15px;
+   display:none;
+   width:175px;
+   height:320px;
+}
+#main #glux, #ajDzerq, #por, #votqer {
+display:none;
+}
+
+
+
