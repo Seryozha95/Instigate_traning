@@ -1,0 +1,24 @@
+#game{
+    background-color:#ccc;
+    position:absolute;
+    right:15px;
+    width:180px;
+    height:310px;
+}
+td{
+
+    height:50px;
+
+    width:30px;
+
+    font-size:40px;
+
+    font-family:arial;
+}
+tr{
+
+    height:4px;
+
+
+}
+
