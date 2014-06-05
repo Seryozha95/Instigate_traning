@@ -1,26 +1,31 @@
-var squareHeight=20;
-var squareWith=20;
+var squareHeight=10;
+var squareWith=10;
+var keycode;
+var moveYCord=0;
+var moveXCord=0;
+
 var figureCordinates = [
 {
 	"figure":[
 	{ 
-		cord:[190,30, squareHeight,squareWith],
+		cord:[200,40, squareHeight,squareWith],
 	},
 	{
-		cord:[210,30, squareHeight,squareWith],
+		cord:[210,40, squareHeight,squareWith],
 	},
 	{
-		cord:[190 ,10, squareHeight, squareWith],
+		cord:[200 ,30, squareHeight, squareWith],
 	},
 	{
-		cord:[210 ,10, squareHeight, squareWith],
+		cord:[210 ,30, squareHeight, squareWith],
 	},
 	
 	],
-	},
+},
 	];
 
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	/*
 function play() {
     // pley 
@@ -28,47 +33,71 @@ function play() {
     // exit
 }
 */
-var drowCanvas = document.getElementById("drowCanvas"),
-    drowCanvas = drowCanvas.getContext('2d');
+
+var Canvas = document.getElementById("myCanvas");
+var drowCanvas = Canvas.getContext('2d');
 var figureNumber = Math.floor((Math.random() * figureCordinates.length));
+var count=figureCordinates[figureNumber].figure.length;
+//document.onkeydown = function checkKeycode(event);
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function init() {
-    
-    table= new canvasTable(50,50,300,500);
-	console.log(table.xCord);
-  drowCanvas.strokeRect(table.xCoord, table.yCoord, table.newHeight, table.newWith);
+      table= new canvasTable(60,50,300,500);
+	  drowCanvas.strokeRect(table.xCoord, table.yCoord, table.newHeight, table.newWith);
+	setInterval(moveFigure, 600);     
      }
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////     
 function createFigure() {
-//	drowCanvas.beginPath();
-	for ( var i =0; i<4; i++) {
+	for ( var i =0; i<count; i++) {
 	drowCanvas.fillRect(figureCordinates[figureNumber].figure[i].cord[0],figureCordinates[figureNumber].figure[i].cord[1], squareHeight, squareWith);
 	}
 }
-console.log(figureCordinates[0].figure[0].cord[1] + 10);
-console.log(figureCordinates[0].figure[0].cord[1] + 10);
-;
-var moveYCord=0;
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+document.onkeydown = function checkKeyCode(event)
+{      
+	 if(event.which) 
+    	keycode = event.which;
+    if(keycode==37){
+    	moveXCord=moveXCord-squareHeight;
+    	moveYCord-=squareHeight;
+	     	moveFigure();
+     }
+    if(keycode==39){
+    	moveXCord=moveXCord+squareHeight;
+    	moveYCord-=squareHeight;
+     	moveFigure();
+    }
+ }
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function moveFigure(){
-	
-	
-	moveYCord+=60;
+	moveYCord+=squareHeight;
 	drowCanvas.beginPath();
-		for ( var i =0; i<4; i++) {
+	for ( var i =0; i<count; i++) {
+		//drowCanvas.beginPath();
+		drowCanvas.fillRect(figureCordinates[figureNumber].figure[i].cord[0]+moveXCord,figureCordinates[figureNumber].figure[i].cord[1]+moveYCord,squareHeight, squareWith);
+		}
+		drowCanvas.closePath();
+		drowCanvas.fill();
 		
-	drowCanvas.fillRect( figureCordinates[figureNumber].figure[i].cord[0],figureCordinates[figureNumber].figure[i].cord[1]+moveYCord,squareHeight, squareWith);
-	
-	
-	}
-
-
 }
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function canvasTable (xCoord, yCoord, newHeight, newWith) {
       this.xCoord=xCoord;
       this.yCoord=yCoord;
       this.newHeight=newHeight;
       this.newWith=newWith;
-	       
+       
 }
 
 
-    
      
