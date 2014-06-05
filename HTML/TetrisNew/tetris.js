@@ -75,19 +75,18 @@ document.onkeydown = function checkKeyCode(event)
  }
 
 
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function moveFigure(){
 	moveYCord+=squareHeight;
 	drowCanvas.beginPath();
-	for ( var i =0; i<count; i++) {
-		//drowCanvas.beginPath();
-		drowCanvas.fillRect(figureCordinates[figureNumber].figure[i].cord[0]+moveXCord,figureCordinates[figureNumber].figure[i].cord[1]+moveYCord,squareHeight, squareWith);
+		drowCanvas.clearRect(60,45,300,490);
+		for ( var i =0; i<count; i++) {
+			drowCanvas.fillRect(figureCordinates[figureNumber].figure[i].cord[0]+moveXCord,figureCordinates[figureNumber].figure[i].cord[1]+moveYCord,squareHeight, squareWith);
 		}
 		drowCanvas.closePath();
 		drowCanvas.fill();
-		
-}
+	}
+
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
