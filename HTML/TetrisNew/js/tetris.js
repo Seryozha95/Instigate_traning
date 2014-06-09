@@ -1,12 +1,9 @@
 var squareHeight = 10;
 var squareWidth = 10;
-var tableXCoord = 60;
-var tableYCoord = 50;
-var tableNewHeight = 300;
-var tableNewWidth = 200;
 var keycode = 0;
 var moveYCord = 0;
 var moveXCord = 0;
+//var figuresCount = 0;
 var carentYCoord = new Array();
 var carentXCoord = new Array();
 var occupatioCnells = new Array();
@@ -74,6 +71,28 @@ var figureCordinates = [
 	],
 },
 
+{
+	"figure":[
+	{
+		cord:[ 150, 50, squareHeight, squareWidth ],
+	},
+
+	{
+		cord:[ 150, 60, squareHeight, squareWidth ],
+	},
+
+	{
+		cord:[ 150, 70, squareHeight, squareWidth ],
+	},
+
+	{
+		cord:[ 150, 80, squareHeight, squareWidth ],
+	},
+
+	],
+},
+
+
 	];
 
 
@@ -90,7 +109,11 @@ var canvas = document.getElementById("myCanvas");
 var drawCanvas = canvas.getContext('2d');
 var figureNumber = Math.floor((Math.random() * figureCordinates.length));
 var count = figureCordinates[figureNumber].figure.length;
-
+//figuresCount += 1;
+var tableXCoord = 60;
+var tableYCoord = 50;
+var tableNewHeight = 300;
+var tableNewWidth = 200;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function init() {
@@ -131,6 +154,7 @@ document.onkeydown = function checkKeyCode(event){
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+var occupatioCnellsCount = occupatioCnells.length;
 function moveFigure() {
 	if(figureCordinates[figureNumber].figure[3].cord[1] + moveYCord < tableNewHeight + 40) {
 		moveYCord += squareHeight;
@@ -142,33 +166,46 @@ function moveFigure() {
 			carentXCoord[i] = (figureCordinates[figureNumber].figure[i].cord[0]+moveXCord);
 			carentYCoord[i] = (figureCordinates[figureNumber].figure[i].cord[1]+moveYCord);
 			drawCanvas.fillRect(carentXCoord[i], carentYCoord[i], squareHeight, squareWidth);
-			console.log(carentXCoord[i]);
-			console.log(carentYCoord[i]);
-		} 
+			//coordinatesCompare();
+			} 
 	} else {
 			figureNumber = Math.floor((Math.random() * figureCordinates.length));
 			moveYCord = 0;
 			moveXCord = 0;
-
+			//figuresCount += 1;
 			for( var i = 0; i < count; i++)	{
+				//occupatioCnells[i] = new Array();
+				//occupatioCnells[i][0] = carentXCoord[i];
+				//occupatioCnells[i][1] = carentYCoord[i];
 				occupatioCnells.push(carentXCoord[i], carentYCoord[i]);
-				//console.log(occupatioCnells[i]);
+				 occupatioCnellsCount = occupatioCnells.length;
+				// console.log(occupatioCnellsCount);
+				//console.log(occupatioCnells[i][0], occupatioCnells[i][1]);
 				carentXCoord[i] = 0;
 				carentYCoord[i] = 0;
+
 			}
 		}
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-function coordinatesCompare (moveFigureXCoord, moveFigureYCoord, occupatioCnellsXCoord, occupatioCnellsYCoord) {
-	if(moveFigureXCoord == occupatioCnellsXCoord &&  moveFigureYCoord == occupatioCnellsYCoord) {
-		figureNumber = Math.floor((Math.random() * figureCordinates.length));
-		moveYCord = 0;
-		moveXCord = 0;
-		for( var i = 0; i < count; i++)	{
-			occupatioCnells.push(carentXCoord[i], carentYCoord[i]);
-			carentXCoord[i] = 0;
-			carentYCoord[i] = 0;
+function coordinatesCompare () {
+	
+	for(var z = 0; z < 4 + count; z++) { 
+		for(var j = 0; j < count; j++)	{
+			if(carentXCoord[j] == occupatioCnells[z] &&  carentYCoord[j] == occupatioCnells[z]) {
+				figureNumber = Math.floor((Math.random() * figureCordinates.length));
+				moveYCord = 0;
+				moveXCord = 0;
+				//occupatioCnells[occupatioCnellsCount + 1] = new Array();
+				//occupatioCnells[occupatioCnellsCount + 1][0] = carentXCoord[j];
+				//occupatioCnells[occupatioCnellsCount + 1][1] = carentYCoord[j];
+				//occupatioCnellsCount = occupatioCnells.length;
+				occupatioCnells.push(carentXCoord[z], carentYCoord[z]);
+				carentXCoord[z] = 0;
+				carentYCoord[z] = 0;
+				console.log(occupatioCnells.length);
+			}
 		}
 	}
 }
